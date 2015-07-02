@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+	
+	{{title}}
+
+	<br>
+	<br>
+
+	Natural language processing is the ability of a computer program to understand human speech as it is spoken.
+
+	<br>
+
+	To build the NLP component of this app I used a YouTube tutorial series from Sentdex. 	
+	This tutorial not only helped me build my first NLP app, but also taught me about NLP itself.  
+
+	<br>
+
+	<a href="https://www.youtube.com/watch?v=CMyoQbBq5IE&list=PLQVvvaa0QuDfRO5bQFLcVgvIOIhNUZpZf">
+		You can see the tutorial here.
+	</a>
+
+	<br>
+	<br>
+
+	The function that is created in the tutorial uses Machine Learning algorithms from 
+	SciKit-Learn (a popular Python Machine Learning Library) to analyze and then learn how to do Sentiment 
+	Analysis. It does this by going through a large dataset of small sentences that have already been labeled
+	as positive or negative. The computer counts the number of times an adjective that appears in the negative set of sentences and 
+	the positive set of sentences. If the ratio of the count is bias towards the negative set - the computer will determine the
+	adjective to be negative and vice versa. Then when the algorithm finds these adjectives in the message you type it can say, with 
+	some confidence depending on the ratio of the count, if the adjective contributes negatively or positively to the sentence as a whole. 
+	Then taking in all the adjectives, can make a decision on the entire sentence. 
+
+	<br>
+	<br>
+
+	This process requires a lot of data to be in the negative and positive sets of sentences. The more data there is the better the 
+	algorithm will be! 
+
+
+
+{% endblock %}

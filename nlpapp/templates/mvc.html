@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+	{{title}}
+
+	<br>
+	<br>
+
+	MVC is a design pattern for dynamic websites (websites that need a server component). 
+
+	<br>
+
+	MVC has three parts, M, V and C. <br>
+	M stands for Model and deals with Data Access Logic. <br>
+	V stands for View and deals with Visual Business Logic. <br>
+	C stands for Controller and deals with Presentation Logic. <br>
+
+	Or a simpler explanation, the model is the variables that exist on the server side that the users can play with. In 
+	Django, the model is handled by Django's database layer, which means that the models need to be set up 
+	with data beforehand for the users to play with.
+
+	<br>
+	<br>
+	
+	The view is the website templates that allow the user to interact with the model, processing the database layer 
+	before, during and after the user does so.
+
+	<br>
+	<br>
+
+	The controller controls which view the user should be shown. It steers the application by handling requests and responses, setting up database connections and loading add-ons. Django does a lot of this in it's setings file so that it knows what to load and set up. Django also has a URL file so it knows what to do with the incoming requests from browsers.
+
+
+{% endblock %}
