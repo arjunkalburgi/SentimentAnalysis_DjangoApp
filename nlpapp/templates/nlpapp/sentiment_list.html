@@ -1,41 +1,49 @@
 {% extends "base.html" %}
 {% block content %}
 
-	{{ title }}
+	<!-- {{ title }} -->
 
-	<br><br>
+<section class="success">
+    <div class="container">
+        Please type a few sentences about a topic you are passionate about. 
+		<br>
+		Use good adjectives and let the computer tell you if your message has
+		<br>
+		a positive or negative connotation. 
 
-	Please type a few sentences about a topic you are passionate about. 
-	<br>
-	Use good adjectives and let the computer tell you if your message has
-	<br>
-	a positive or negative connotation. 
+		<br>
+		<br>
 
-	<br>
-	<br>
+		<div class="text_section">
+			<form id="text_input_form_id" method="get" action="{% url 'Senty' %}">
+				<input type="text" class="form-control" id="search_text" name="search_text"/>
+				{# csrf_token is not needed when the method is "get" #}
+				<input id="id_pic_submit_button" class="btn btn-lg btn-outline" type="submit" value="Send message to server!" style="float:right;" />
+			</form>
+		</div>
 
-	<div class="text_section">
-		<form id="text_input_form_id" method="get" action="{% url 'Senty' %}">
-			<input type="text" id="search_text" name="search_text"/>
-			{# csrf_token is not needed when the method is "get" #}
-			<input id="id_pic_submit_button" type="submit" value="Send message to server!"/>
-		</form>
-	</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 
-	<br>
+		<div class="answer_section">
+			{% if analysis_result|length > 0 %}
+				The message: <code>{{ search_text }}</code> 
+				comes out as: <code>{{ analysis_result }}</code>
+				based on the algorithm.
 
-	<div class="answer_section">
-		{% if analysis_result|length > 0 %}
-			The message: <code>{{ search_text }}</code> 
-			comes out as: <code>{{ analysis_result }}</code>
-			based on the algorithm.
+				<br>
 
-			<br>
+				Was it right or wrong? Try again!
+			{% endif %}
+		</div>
 
-			Was it right or wrong? Try again!
-		{% endif %}
-	</div>
+		<br>
 
-	<br>
+    </div>
+</section>
 
+	
 {% endblock %}
